@@ -53,11 +53,9 @@ export default function Home() {
 
       {/* Connect Section */}
       <div className="container mx-auto pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 text-center pb-8 gap-8">
-          <div className="col-span-full">
-            <h2 className="text-primary text-3xl md:text-4xl font-semibold">Connect</h2>
-          </div>
-          <div className="social pb-8">
+        <div className="text-center pb-8">
+          <h2 className="text-primary text-3xl md:text-4xl font-semibold mb-8">Connect</h2>
+          <div className="social pb-8 flex w-full justify-center gap-8">
             <a
               href="https://www.facebook.com/pages/category/Mexican-Restaurant/Dolorespvd-103837847755769/"
               target="_blank"

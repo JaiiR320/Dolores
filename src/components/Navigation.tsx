@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import Image from 'next/image';
-import { useState } from 'react';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   const isActive = (path: string) => {
-    if (path === '/') return pathname === '/';
+    if (path === "/") return pathname === "/";
     return pathname.startsWith(path);
   };
 
@@ -51,7 +51,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/"
-                  className={`nav-link ${isActive('/') && pathname === '/' ? 'font-quiche-bold' : ''}`}
+                  className={`nav-link ${isActive("/") && pathname === "/" ? "font-quiche-bold" : ""}`}
                 >
                   Home
                 </Link>
@@ -59,7 +59,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/menu"
-                  className={`nav-link ${isActive('/menu') ? 'font-quiche-bold' : ''}`}
+                  className={`nav-link ${isActive("/menu") ? "font-quiche-bold" : ""}`}
                 >
                   Menu
                 </Link>
@@ -67,7 +67,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/reservation"
-                  className={`nav-link ${isActive('/reservation') ? 'font-quiche-bold' : ''}`}
+                  className={`nav-link ${isActive("/reservation") ? "font-quiche-bold" : ""}`}
                 >
                   Reserve
                 </Link>
@@ -75,7 +75,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/order"
-                  className={`nav-link ${isActive('/order') ? 'font-quiche-bold' : ''}`}
+                  className={`nav-link ${isActive("/order") ? "font-quiche-bold" : ""}`}
                 >
                   Order
                 </Link>
@@ -89,22 +89,38 @@ export default function Navigation() {
           <div className="md:hidden mt-4">
             <ul className="flex flex-col space-y-2">
               <li>
-                <Link href="/" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
+                <Link
+                  href="/"
+                  className="nav-link-mobile"
+                  onClick={() => setIsOpen(false)}
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/menu" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
+                <Link
+                  href="/menu"
+                  className="nav-link-mobile"
+                  onClick={() => setIsOpen(false)}
+                >
                   Menu
                 </Link>
               </li>
               <li>
-                <Link href="/reservation" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
+                <Link
+                  href="/reservation"
+                  className="nav-link-mobile"
+                  onClick={() => setIsOpen(false)}
+                >
                   Reserve
                 </Link>
               </li>
               <li>
-                <Link href="/order" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
+                <Link
+                  href="/order"
+                  className="nav-link-mobile"
+                  onClick={() => setIsOpen(false)}
+                >
                   Order
                 </Link>
               </li>

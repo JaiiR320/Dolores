@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { quicheRegular, quicheBold } from "@/lib/fonts";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -22,12 +21,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-          strategy="afterInteractive"
-        />
-      </head>
       <body className={`${quicheRegular.variable} ${quicheBold.variable}`}>
         <Navigation />
         {children}

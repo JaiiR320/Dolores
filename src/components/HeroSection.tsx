@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 
@@ -9,7 +9,12 @@ interface HeroSectionProps {
   buttonLink: string;
 }
 
-export default function HeroSection({ imageSrc, imageAlt, buttonText, buttonLink }: HeroSectionProps) {
+export default function HeroSection({
+  imageSrc,
+  imageAlt,
+  buttonText,
+  buttonLink,
+}: HeroSectionProps) {
   return (
     <div className="relative">
       <div className="slide-container relative w-full">
@@ -28,7 +33,7 @@ export default function HeroSection({ imageSrc, imageAlt, buttonText, buttonLink
               type="button"
               id="order-btn"
               className="btn-primary text-white px-12 py-4 rounded text-4xl font-semibold hover:opacity-90 transition-opacity"
-              onClick={() => window.open(buttonLink, '_self')}
+              onClick={() => window.open(buttonLink, "_self")}
             >
               {buttonText}
             </button>

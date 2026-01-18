@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+@layer base {
+    html,
+    body {
+        @apply h-full w-full text-text-body;
+        font-family: var(--font-quiche-regular), sans-serif;
+    }
+}

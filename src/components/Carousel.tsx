@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface CarouselSlide {
   src: string;
@@ -62,9 +62,9 @@ export default function Carousel({
               type="button"
               onClick={() => goToSlide(index)}
               className={`w-3 h-3 rounded-full transition-all ${
-                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+                index === currentSlide ? "bg-white w-8" : "bg-white/50"
               }`}
-              aria-current={index === currentSlide ? 'true' : 'false'}
+              aria-current={index === currentSlide ? "true" : "false"}
               aria-label={`Slide ${index + 1}`}
             />
           ))}
@@ -76,7 +76,7 @@ export default function Carousel({
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`slide ${index === currentSlide ? 'block' : 'hidden'} relative w-full`}
+            className={`slide ${index === currentSlide ? "block" : "hidden"} relative w-full`}
           >
             <Image
               src={slide.src}
@@ -99,7 +99,9 @@ export default function Carousel({
                   <button
                     type="button"
                     className="btn-primary text-white px-8 py-3 rounded text-lg font-semibold hover:opacity-90 transition-opacity"
-                    onClick={() => window.open(slide.caption!.buttonLink, '_self')}
+                    onClick={() =>
+                      window.open(slide.caption!.buttonLink, "_self")
+                    }
                   >
                     {slide.caption.buttonText}
                   </button>
@@ -119,8 +121,16 @@ export default function Carousel({
             onClick={prevSlide}
             aria-label="Previous slide"
           >
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+            <svg
+              className="w-8 h-8 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
             </svg>
           </button>
           <button
@@ -129,8 +139,16 @@ export default function Carousel({
             onClick={nextSlide}
             aria-label="Next slide"
           >
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+            <svg
+              className="w-8 h-8 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clipRule="evenodd"
+              />
             </svg>
           </button>
         </>
