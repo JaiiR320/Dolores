@@ -17,22 +17,21 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <div className="relative">
-      <div className="slide-container relative w-full">
-        <div className="slide block relative w-full">
+      <div className="relative w-full">
+        <div className="block relative w-full">
           <Image
             src={imageSrc}
             alt={imageAlt}
             width={1920}
             height={1080}
-            className="w-full h-auto"
+            className="w-full h-full"
             unoptimized
             priority
           />
-          <div className="hero-overlay text-center text-white">
+          <div className="absolute left-0 right-0 transform -translate-y-1/2 top-[40%] sm:top-[45%] md:top-1/2 text-center text-white">
             <button
               type="button"
-              id="order-btn"
-              className="btn-primary text-white px-12 py-4 rounded text-4xl font-semibold hover:opacity-90 transition-opacity"
+              className="bg-primary border border-primary transition-colors hover:bg-primary-light hover:border-primary-light text-white px-12 py-4 rounded text-4xl font-semibold hover:opacity-90 transition-opacity relative text-[34px] top-[35%] p-[3%] [text-shadow:6px_6px_10px_#000]"
               onClick={() => window.open(buttonLink, "_self")}
             >
               {buttonText}

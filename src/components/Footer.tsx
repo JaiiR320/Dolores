@@ -2,20 +2,20 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="bg-footer-bg text-footer-text pt-8">
       <div className="container mx-auto pb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 text-center gap-4">
           <div className="md:col-span-2"></div>
 
           <div className="md:col-span-4">
             <Image
-              className="footer-img mx-auto"
+              className="w-[190px] h-auto mx-auto"
               src="/img/footer-img-small.png"
               alt="footer logo"
               width={190}
               height={100}
             />
-            <hr className="light mx-auto" />
+            <hr className="border-t border-footer-text w-3/4 mt-3 mb-4 mx-auto" />
             <p>(401) 409-2075</p>
             <p>info@dolorespvd.com</p>
             <p>100 Hope St.</p>
@@ -23,9 +23,9 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-4">
-            <hr className="light mx-auto" />
+            <hr className="border-t border-footer-text w-3/4 mt-3 mb-4 mx-auto" />
             <h5 className="text-lg font-semibold">Our Hours</h5>
-            <hr className="light mx-auto" />
+            <hr className="border-t border-footer-text w-3/4 mt-3 mb-4 mx-auto" />
             <div>
               <p>Sunday Brunch 11AM-3PM</p>
               <p>Monday 4PM-10PM</p>
@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="md:col-span-2"></div>
 
           <div className="col-span-full">
-            <hr className="light-100 mx-auto" />
+            <hr className="border-t border-footer-text w-full mt-3 mb-4 mx-auto" />
             <h5 className="text-lg">&copy;dolorespvd</h5>
           </div>
         </div>

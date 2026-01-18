@@ -55,7 +55,7 @@ export default function Carousel({
     <div className="relative">
       {/* Indicators */}
       {showIndicators && slides.length > 1 && (
-        <div className="slide-indicators absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
+        <div className="hidden sm:flex absolute bottom-4 left-0 right-0 justify-center gap-2 z-10">
           {slides.map((_, index) => (
             <button
               key={index}
@@ -72,11 +72,13 @@ export default function Carousel({
       )}
 
       {/* Slides */}
-      <div className="slide-container relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`slide ${index === currentSlide ? "block" : "hidden"} relative w-full`}
+            className={`transition-transform duration-500 ease-in-out ${
+              index === currentSlide ? "block" : "hidden"
+            } relative w-full`}
           >
             <Image
               src={slide.src}
@@ -88,17 +90,21 @@ export default function Carousel({
               priority={index === 0}
             />
             {slide.caption && (
-              <div className="hero-overlay text-center text-white">
+              <div className="absolute left-0 right-0 transform -translate-y-1/2 top-[40%] sm:top-[45%] md:top-1/2 text-center text-white">
                 {slide.caption.title && (
-                  <h1 className="font-bold mb-4">{slide.caption.title}</h1>
+                  <h1 className="font-bold mb-4 uppercase text-[250%] sm:text-[350%] md:text-[500%] [text-shadow:1px_1px_15px_#000]">
+                    {slide.caption.title}
+                  </h1>
                 )}
                 {slide.caption.subtitle && (
-                  <h3 className="text-2xl mb-4">{slide.caption.subtitle}</h3>
+                  <h3 className="text-2xl mb-4 pb-1 sm:pb-4 text-[110%] sm:text-[140%] md:text-[200%] font-normal md:font-medium [text-shadow:1px_1px_10px_#000]">
+                    {slide.caption.subtitle}
+                  </h3>
                 )}
                 {slide.caption.buttonText && slide.caption.buttonLink && (
                   <button
                     type="button"
-                    className="btn-primary text-white px-8 py-3 rounded text-lg font-semibold hover:opacity-90 transition-opacity"
+                    className="bg-primary border border-primary transition-colors hover:bg-primary-light hover:border-primary-light text-white px-8 py-3 rounded text-lg font-semibold hover:opacity-90 transition-opacity"
                     onClick={() =>
                       window.open(slide.caption!.buttonLink, "_self")
                     }

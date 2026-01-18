@@ -51,7 +51,9 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/"
-                  className={`nav-link ${isActive("/") && pathname === "/" ? "font-quiche-bold" : ""}`}
+                  className={`text-primary hover:text-primary-light text-[1.3em] transition-colors ${
+                    isActive("/") && pathname === "/" ? "font-quiche-bold" : ""
+                  }`}
                 >
                   Home
                 </Link>
@@ -59,7 +61,9 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/menu"
-                  className={`nav-link ${isActive("/menu") ? "font-quiche-bold" : ""}`}
+                  className={`text-primary hover:text-primary-light text-[1.3em] transition-colors ${
+                    isActive("/menu") ? "font-quiche-bold" : ""
+                  }`}
                 >
                   Menu
                 </Link>
@@ -67,7 +71,9 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/reservation"
-                  className={`nav-link ${isActive("/reservation") ? "font-quiche-bold" : ""}`}
+                  className={`text-primary hover:text-primary-light text-[1.3em] transition-colors ${
+                    isActive("/reservation") ? "font-quiche-bold" : ""
+                  }`}
                 >
                   Reserve
                 </Link>
@@ -75,7 +81,9 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/order"
-                  className={`nav-link ${isActive("/order") ? "font-quiche-bold" : ""}`}
+                  className={`text-primary hover:text-primary-light text-[1.3em] transition-colors ${
+                    isActive("/order") ? "font-quiche-bold" : ""
+                  }`}
                 >
                   Order
                 </Link>
@@ -91,7 +99,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/"
-                  className="nav-link-mobile"
+                  className="block text-primary hover:text-primary-light text-[1.3em] py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   Home
@@ -100,7 +108,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/menu"
-                  className="nav-link-mobile"
+                  className="block text-primary hover:text-primary-light text-[1.3em] py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   Menu
@@ -109,7 +117,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/reservation"
-                  className="nav-link-mobile"
+                  className="block text-primary hover:text-primary-light text-[1.3em] py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   Reserve
@@ -118,7 +126,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/order"
-                  className="nav-link-mobile"
+                  className="block text-primary hover:text-primary-light text-[1.3em] py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   Order

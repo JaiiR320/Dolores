@@ -42,16 +42,18 @@ export default function OrderPage() {
               Digital Gift Cards
             </h1>
             <p className="mt-6">
-              <button
-                type="button"
-                className="btn-primary text-white px-8 py-3 rounded text-lg font-semibold hover:opacity-90 transition-opacity"
-                onClick={() =>
-                  window.open(
-                    "https://app.upserve.com/b/dolores/gift-card",
-                    "_self",
-                  )
-                }
-              >
+                <button
+                  type="button"
+                  className="bg-primary border border-primary transition-colors hover:bg-primary-light hover:border-primary-light text-white px-8 py-3 rounded text-lg font-semibold hover:opacity-90 transition-opacity"
+                  onClick={() =>
+                    window.open(
+                      "https://app.upserve.com/b/dolores/gift-card",
+                      "_self",
+                    )
+                  }
+                >
+
+
                 Get Here
               </button>
             </p>

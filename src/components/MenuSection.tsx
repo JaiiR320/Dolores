@@ -13,15 +13,16 @@ interface MenuSectionProps {
 export default function MenuSection({ title, images }: MenuSectionProps) {
   return (
     <>
-      <div className="w-full bg-gray-100">
-        <div className="container mx-auto">
-          <div className="section-header">
-            <p className="text-lg">
-              <mark className="bold-words">{title}</mark>
-            </p>
+        <div className="w-full bg-gray-100">
+          <div className="container mx-auto">
+            <div className="p-4 rounded-none text-center text-xl bg-gray-100">
+              <p className="text-lg">
+                <span className="text-primary font-quiche-bold">{title}</span>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+
 
       {images.map((image, index) => (
         <div key={index} className="flex flex-wrap px-1">
