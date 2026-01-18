@@ -1,5 +1,37 @@
 @import "tailwindcss";
-@config "../../tailwind.config.ts";
+
+@theme {
+    /* Colors */
+    --color-primary: #385CC7;
+    --color-primary-light: #5f7dd9;
+    --color-primary-dark: #2d4a9e;
+    --color-text-body: #222;
+    --color-footer-bg: #3f3f3f;
+    --color-footer-text: #d5d5d5;
+    --color-social-facebook: #3b5998;
+    --color-social-instagram: #517fa8;
+
+    /* Font families */
+    --font-quiche-regular: var(--font-quiche-regular), sans-serif;
+    --font-quiche-bold: var(--font-quiche-bold), sans-serif;
+
+    /* Font sizes - Navigation */
+    --text-nav: 1.3em;
+
+    /* Font sizes - Hero/Carousel title (responsive scale) */
+    --text-hero-title-sm: 250%;
+    --text-hero-title-md: 350%;
+    --text-hero-title-lg: 500%;
+
+    /* Font sizes - Hero/Carousel subtitle (responsive scale) */
+    --text-hero-subtitle-sm: 110%;
+    --text-hero-subtitle-md: 140%;
+    --text-hero-subtitle-lg: 200%;
+
+    /* Spacing - Hero/Carousel vertical positioning */
+    --spacing-hero-top-sm: 40%;
+    --spacing-hero-top-md: 45%;
+}
 
 @layer base {
     html,

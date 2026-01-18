@@ -80,18 +80,29 @@ Focus: Replace arbitrary values with theme tokens for consistency.
 - Updated `HeroSection.tsx` to use `.hero-text-container`
 - Updated `page.tsx` social icons to use `.social-icon` and theme colors
 
-## Phase 4: Developer Experience
+## Phase 4: Developer Experience (SKIPPED)
 Focus: Improve tooling and code organization.
 
-- [ ] Add `clsx` or `tailwind-merge` package for conditional class handling
-- [ ] Create `cn()` utility function in `src/lib/utils.ts`
-- [ ] Add `prettier-plugin-tailwindcss` for automatic class sorting
-- [ ] Refactor conditional class logic to use `cn()` utility
+- [x] ~~Add `clsx` or `tailwind-merge` package for conditional class handling~~ (skipped)
+- [x] ~~Create `cn()` utility function in `src/lib/utils.ts`~~ (skipped)
+- [x] ~~Add `prettier-plugin-tailwindcss` for automatic class sorting~~ (skipped)
+- [x] ~~Refactor conditional class logic to use `cn()` utility~~ (skipped)
 
-## Phase 5: Tailwind v4 Migration (Optional)
+**Note:** Skipped per user request - can be revisited later if needed.
+
+## Phase 5: Tailwind v4 Migration (COMPLETE)
 Focus: Fully adopt Tailwind v4 CSS-first configuration.
 
-- [ ] Migrate color definitions from `tailwind.config.ts` to `@theme` directive in `globals.css`
-- [ ] Migrate font family definitions to `@theme` directive
-- [ ] Add color scale variants (e.g., `primary-dark`)
-- [ ] Remove or simplify `tailwind.config.ts`
+- [x] Migrate color definitions from `tailwind.config.ts` to `@theme` directive in `globals.css`
+- [x] Migrate font family definitions to `@theme` directive
+- [x] Migrate custom font sizes and spacing to `@theme` directive
+- [x] Remove or simplify `tailwind.config.ts`
+
+**Changes made:**
+- Added `@theme` block to `globals.css` with all theme tokens:
+  - Colors: `primary`, `primary-light`, `primary-dark`, `text-body`, `footer-bg`, `footer-text`, `social-facebook`, `social-instagram`
+  - Font families: `quiche-regular`, `quiche-bold`
+  - Font sizes: `nav`, `hero-title-sm/md/lg`, `hero-subtitle-sm/md/lg`
+  - Spacing: `hero-top-sm`, `hero-top-md`
+- Removed `@config` directive from `globals.css` (no longer needed)
+- Simplified `tailwind.config.ts` to only contain `content` paths (can be removed entirely if desired)
