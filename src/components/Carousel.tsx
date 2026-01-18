@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 interface CarouselSlide {
@@ -28,31 +28,69 @@ export default function Carousel({
   interval = 5000,
 }: CarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  // Minimum swipe distance to trigger navigation (in px)
+  const minSwipeDistance = 50;
 
   useEffect(() => {
-    if (!autoSlide) return;
+    if (!autoSlide || isPaused) return;
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, interval);
 
     return () => clearInterval(timer);
-  }, [autoSlide, interval, slides.length]);
+  }, [autoSlide, interval, slides.length, currentSlide, isPaused]);
 
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     setCurrentSlide(index);
-  };
+  }, []);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
+  }, [slides.length]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  }, [slides.length]);
+
+  // Touch handlers for swipe support
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
   };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
+  // Hover handlers for pause functionality
+  const onMouseEnter = () => setIsPaused(true);
+  const onMouseLeave = () => setIsPaused(false);
 
   return (
-    <div className="relative">
+    <div
+      className="relative"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       {/* Indicators */}
       {showIndicators && slides.length > 1 && (
         <div className="hidden sm:flex absolute bottom-4 left-0 right-0 justify-center gap-2 z-10">
@@ -72,50 +110,58 @@ export default function Carousel({
       )}
 
       {/* Slides */}
-      <div className="relative w-full overflow-hidden">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`transition-transform duration-500 ease-in-out ${
-              index === currentSlide ? "block" : "hidden"
-            } relative w-full`}
-          >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              width={1920}
-              height={1080}
-              className="w-full h-auto"
-              unoptimized
-              priority={index === 0}
-            />
-            {slide.caption && (
-              <div className="hero-text-container">
-                {slide.caption.title && (
-                  <h1 className="hero-title">
-                    {slide.caption.title}
-                  </h1>
-                )}
-                {slide.caption.subtitle && (
-                  <h3 className="hero-subtitle">
-                    {slide.caption.subtitle}
-                  </h3>
-                )}
-                {slide.caption.buttonText && slide.caption.buttonLink && (
-                  <button
-                    type="button"
-                    className="btn-primary"
-                    onClick={() =>
-                      window.open(slide.caption!.buttonLink, "_self")
-                    }
-                  >
-                    {slide.caption.buttonText}
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
-        ))}
+      <div
+        className="relative w-full overflow-hidden"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className="relative w-full flex-shrink-0"
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                width={1920}
+                height={1080}
+                className="w-full h-auto"
+                unoptimized
+                priority={index === 0}
+              />
+              {slide.caption && (
+                <div className="hero-text-container">
+                  {slide.caption.title && (
+                    <h1 className="hero-title">
+                      {slide.caption.title}
+                    </h1>
+                  )}
+                  {slide.caption.subtitle && (
+                    <h3 className="hero-subtitle">
+                      {slide.caption.subtitle}
+                    </h3>
+                  )}
+                  {slide.caption.buttonText && slide.caption.buttonLink && (
+                    <button
+                      type="button"
+                      className="btn-primary"
+                      onClick={() =>
+                        window.open(slide.caption!.buttonLink, "_self")
+                      }
+                    >
+                      {slide.caption.buttonText}
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Controls */}
