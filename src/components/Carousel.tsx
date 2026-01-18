@@ -104,7 +104,7 @@ export default function Carousel({
                 {slide.caption.buttonText && slide.caption.buttonLink && (
                   <button
                     type="button"
-                    className="bg-primary border border-primary transition-colors hover:bg-primary-light hover:border-primary-light text-white px-8 py-3 rounded text-lg font-semibold hover:opacity-90 transition-opacity"
+                    className="bg-primary border border-primary transition hover:bg-primary-dark hover:border-primary-dark text-white px-8 py-3 rounded text-lg font-semibold"
                     onClick={() =>
                       window.open(slide.caption!.buttonLink, "_self")
                     }
