@@ -61,7 +61,7 @@ export default function Home() {
               aria-label="Visit our Facebook page"
             >
               <svg
-                className="w-[1em] h-[1em] block text-[#3b5998] hover:text-footer-text"
+                className="social-icon text-social-facebook hover:text-footer-text"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -75,7 +75,7 @@ export default function Home() {
               aria-label="Visit our Instagram page"
             >
               <svg
-                className="w-[1em] h-[1em] block text-[#517fa8] hover:text-footer-text"
+                className="social-icon text-social-instagram hover:text-footer-text"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >

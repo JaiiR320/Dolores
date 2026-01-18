@@ -1,5 +1,16 @@
 # Tailwind CSS Improvement Plan
 
+## Workflow
+
+1. **Execute Phase** - Work through each task in the current phase
+2. **Summarize** - Provide a brief summary of all changes made
+3. **Review Loop** - Ask if any fixes are needed
+   - If changes requested → make fixes → summarize → repeat
+   - If "looks good" → proceed to commit
+4. **Commit** - Create a simple commit with a clear message (only when explicitly confirmed as 100% done)
+
+---
+
 ## Phase 1: Fix Bugs and Conflicts (COMPLETE)
 Focus: Address broken or conflicting styles that may cause unexpected behavior.
 
@@ -41,12 +52,33 @@ Focus: Reduce repetition by creating reusable utility classes in `globals.css`.
 - Updated `Navigation.tsx` mobile links (4) to use `.nav-link-mobile`
 - Updated `Footer.tsx` dividers (4) to use `.divider-footer` and `.divider-footer-full`
 
-## Phase 3: Standardize Arbitrary Values
+## Phase 3: Standardize Arbitrary Values (COMPLETE)
 Focus: Replace arbitrary values with theme tokens for consistency.
 
-- [ ] Define custom font sizes in config for `text-[1.3em]`, `text-[250%]`, `text-[110%]`
-- [ ] Define text-shadow CSS variables for repeated shadow patterns
-- [ ] Audit and standardize spacing values (replace `p-[3%]`, `top-[35%]` with standard scale or theme tokens)
+- [x] Define custom font sizes in config for `text-[1.3em]`, `text-[250%]`, `text-[110%]`
+- [x] Define text-shadow CSS variables for repeated shadow patterns
+- [x] Audit and standardize spacing values (replace `p-[3%]`, `top-[35%]` with standard scale or theme tokens)
+
+**Changes made:**
+- Added custom font sizes to `tailwind.config.ts`:
+  - `nav` (1.3em) for navigation links
+  - `hero-title-sm/md/lg` (250%/350%/500%) for carousel titles
+  - `hero-subtitle-sm/md/lg` (110%/140%/200%) for carousel subtitles
+- Added custom spacing to `tailwind.config.ts`:
+  - `hero-top-sm` (40%) and `hero-top-md` (45%) for hero positioning
+- Added social media colors: `social-facebook` and `social-instagram`
+- Added CSS custom properties in `globals.css` for text shadows:
+  - `--shadow-text-sm`, `--shadow-text-lg`, `--shadow-text-btn`
+- Created new component utilities in `globals.css`:
+  - `.hero-text-container` - positioning for hero/carousel text
+  - `.hero-title` - carousel title styling
+  - `.hero-subtitle` - carousel subtitle styling
+  - `.social-icon` - social media icon sizing
+- Updated `.nav-link` and `.nav-link-mobile` to use `text-nav`
+- Updated `.btn-primary` to use CSS variable for text-shadow
+- Updated `Carousel.tsx` to use new `.hero-text-container`, `.hero-title`, `.hero-subtitle` classes
+- Updated `HeroSection.tsx` to use `.hero-text-container`
+- Updated `page.tsx` social icons to use `.social-icon` and theme colors
 
 ## Phase 4: Developer Experience
 Focus: Improve tooling and code organization.

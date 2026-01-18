@@ -28,7 +28,7 @@ export default function HeroSection({
             unoptimized
             priority
           />
-          <div className="absolute left-0 right-0 transform -translate-y-1/2 top-[40%] sm:top-[45%] md:top-1/2 text-center text-white">
+          <div className="hero-text-container">
             <button
               type="button"
               className="btn-primary px-12 py-4 text-2xl"

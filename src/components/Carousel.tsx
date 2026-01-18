@@ -90,14 +90,14 @@ export default function Carousel({
               priority={index === 0}
             />
             {slide.caption && (
-              <div className="absolute left-0 right-0 transform -translate-y-1/2 top-[40%] sm:top-[45%] md:top-1/2 text-center text-white">
+              <div className="hero-text-container">
                 {slide.caption.title && (
-                  <h1 className="font-bold mb-4 uppercase text-[250%] sm:text-[350%] md:text-[500%] [text-shadow:1px_1px_15px_#000]">
+                  <h1 className="hero-title">
                     {slide.caption.title}
                   </h1>
                 )}
                 {slide.caption.subtitle && (
-                  <h3 className="text-2xl mb-4 pb-1 sm:pb-4 text-[110%] sm:text-[140%] md:text-[200%] font-normal md:font-medium [text-shadow:1px_1px_10px_#000]">
+                  <h3 className="hero-subtitle">
                     {slide.caption.subtitle}
                   </h3>
                 )}

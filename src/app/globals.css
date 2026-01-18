@@ -7,21 +7,51 @@
         @apply h-full w-full text-text-body;
         font-family: var(--font-quiche-regular), sans-serif;
     }
+
+    :root {
+        /* Text shadow tokens */
+        --shadow-text-sm: 1px 1px 10px #000;
+        --shadow-text-lg: 1px 1px 15px #000;
+        --shadow-text-btn: 2px 2px 4px #000;
+    }
 }
 
 @layer components {
     /* Primary button - used for main CTAs */
     .btn-primary {
-        @apply bg-primary border border-primary transition hover:bg-primary-dark hover:border-primary-dark text-white px-8 py-3 rounded text-lg font-semibold [text-shadow:2px_2px_4px_#000];
+        @apply bg-primary border border-primary transition hover:bg-primary-dark hover:border-primary-dark text-white px-8 py-3 rounded text-lg font-semibold;
+        text-shadow: var(--shadow-text-btn);
     }
 
     /* Navigation links */
     .nav-link {
-        @apply text-primary hover:text-primary-light text-[1.3em] transition-colors;
+        @apply text-primary hover:text-primary-light text-nav transition-colors;
     }
 
     .nav-link-mobile {
-        @apply block text-primary hover:text-primary-light text-[1.3em] py-2;
+        @apply block text-primary hover:text-primary-light text-nav py-2;
+    }
+
+    /* Hero/Carousel text positioning */
+    .hero-text-container {
+        @apply absolute left-0 right-0 transform -translate-y-1/2 top-hero-top-sm sm:top-hero-top-md md:top-1/2 text-center text-white;
+    }
+
+    /* Hero/Carousel title */
+    .hero-title {
+        @apply font-bold mb-4 uppercase text-hero-title-sm sm:text-hero-title-md md:text-hero-title-lg;
+        text-shadow: var(--shadow-text-lg);
+    }
+
+    /* Hero/Carousel subtitle */
+    .hero-subtitle {
+        @apply text-2xl mb-4 pb-1 sm:pb-4 text-hero-subtitle-sm sm:text-hero-subtitle-md md:text-hero-subtitle-lg font-normal md:font-medium;
+        text-shadow: var(--shadow-text-sm);
+    }
+
+    /* Social icons */
+    .social-icon {
+        @apply w-[1em] h-[1em] block;
     }
 
     /* Section headings */
