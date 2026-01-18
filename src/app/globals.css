@@ -83,7 +83,7 @@
 
     /* Social icons */
     .social-icon {
-        @apply w-[1em] h-[1em] block;
+        @apply w-10 h-10 block;
     }
 
     /* Section headings */
