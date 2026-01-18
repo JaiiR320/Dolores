@@ -15,7 +15,7 @@ export default function Footer() {
               width={190}
               height={100}
             />
-            <hr className="border-t border-footer-text w-3/4 mt-3 mb-4 mx-auto" />
+            <hr className="divider-footer" />
             <p>(401) 409-2075</p>
             <p>info@dolorespvd.com</p>
             <p>100 Hope St.</p>
@@ -23,9 +23,9 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-4">
-            <hr className="border-t border-footer-text w-3/4 mt-3 mb-4 mx-auto" />
+            <hr className="divider-footer" />
             <h5 className="text-lg font-semibold">Our Hours</h5>
-            <hr className="border-t border-footer-text w-3/4 mt-3 mb-4 mx-auto" />
+            <hr className="divider-footer" />
             <div>
               <p>Sunday Brunch 11AM-3PM</p>
               <p>Monday 4PM-10PM</p>
@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="md:col-span-2"></div>
 
           <div className="col-span-full">
-            <hr className="border-t border-footer-text w-full mt-3 mb-4 mx-auto" />
+            <hr className="divider-footer-full" />
             <h5 className="text-lg">&copy;dolorespvd</h5>
           </div>
         </div>

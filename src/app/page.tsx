@@ -30,10 +30,10 @@ export default function Home() {
       {/* Welcome Section */}
       <div className="container mx-auto px-6 pb-10">
         <div className="mx-auto max-w-3xl pt-10 text-center">
-          <h1 className="text-primary text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+          <h1 className="section-heading">
             About Us.
           </h1>
-          <hr className="mx-auto mt-3 mb-6 w-4/5 border-t-2 border-neutral-300/80" />
+          <hr className="divider-heading" />
           <p className="text-base leading-relaxed sm:text-lg md:text-xl">
             <span className="text-primary font-quiche-bold">Dolores</span> is a restaurant located in
             the <span className="text-primary font-quiche-bold">Fox Point neighborhood</span> on the
@@ -47,12 +47,12 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <hr className="my-6 border-neutral-200" />
+      <hr className="divider" />
 
       {/* Connect Section */}
       <div className="container mx-auto pb-8">
         <div className="text-center pb-8">
-          <h2 className="text-primary text-3xl md:text-4xl font-semibold mb-8">Connect</h2>
+          <h2 className="section-subheading">Connect</h2>
           <div className="social pb-8 flex w-full justify-center gap-8">
             <a
               href="https://www.facebook.com/pages/category/Mexican-Restaurant/Dolorespvd-103837847755769/"

@@ -8,3 +8,45 @@
         font-family: var(--font-quiche-regular), sans-serif;
     }
 }
+
+@layer components {
+    /* Primary button - used for main CTAs */
+    .btn-primary {
+        @apply bg-primary border border-primary transition hover:bg-primary-dark hover:border-primary-dark text-white px-8 py-3 rounded text-lg font-semibold [text-shadow:2px_2px_4px_#000];
+    }
+
+    /* Navigation links */
+    .nav-link {
+        @apply text-primary hover:text-primary-light text-[1.3em] transition-colors;
+    }
+
+    .nav-link-mobile {
+        @apply block text-primary hover:text-primary-light text-[1.3em] py-2;
+    }
+
+    /* Section headings */
+    .section-heading {
+        @apply text-primary text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight;
+    }
+
+    .section-subheading {
+        @apply text-primary text-3xl md:text-4xl font-semibold mb-8;
+    }
+
+    /* Dividers */
+    .divider {
+        @apply my-6 border-neutral-200;
+    }
+
+    .divider-heading {
+        @apply mx-auto mt-3 mb-6 w-4/5 border-t-2 border-neutral-300/80;
+    }
+
+    .divider-footer {
+        @apply border-t border-footer-text w-3/4 mt-3 mb-4 mx-auto;
+    }
+
+    .divider-footer-full {
+        @apply border-t border-footer-text w-full mt-3 mb-4 mx-auto;
+    }
+}

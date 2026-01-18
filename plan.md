@@ -12,13 +12,34 @@ Focus: Address broken or conflicting styles that may cause unexpected behavior.
 - Updated `Carousel.tsx` button hover from `primary-light` + opacity to `primary-dark`
 - Updated `order/page.tsx` button hover from `primary-light` + opacity to `primary-dark`
 
-## Phase 2: Extract Common Utilities
+## Phase 2: Extract Common Utilities (COMPLETE)
 Focus: Reduce repetition by creating reusable utility classes in `globals.css`.
 
-- [ ] Create `.btn-primary` utility for primary button styles (used in 4 places)
-- [ ] Create `.nav-link` utility for navigation link styles (used in 8 places)
-- [ ] Create `.section-heading` utility for repeated heading patterns
-- [ ] Create `.divider` utility for horizontal divider patterns
+- [x] Create `.btn-primary` utility for primary button styles (used in 4 places)
+- [x] Create `.nav-link` utility for navigation link styles (used in 8 places)
+- [x] Create `.section-heading` utility for repeated heading patterns
+- [x] Create `.divider` utility for horizontal divider patterns
+
+**Changes made:**
+- Added `@layer components` block to `globals.css` with the following utilities:
+  - `.btn-primary` - Primary CTA button styling
+  - `.nav-link` - Desktop navigation link styling
+  - `.nav-link-mobile` - Mobile navigation link styling
+  - `.section-heading` - Main page headings (h1)
+  - `.section-subheading` - Secondary headings (h2)
+  - `.divider` - Standard section divider
+  - `.divider-heading` - Divider under section headings
+  - `.divider-footer` - Footer dividers (3/4 width)
+  - `.divider-footer-full` - Full-width footer divider
+- Updated `Carousel.tsx:107` to use `.btn-primary`
+- Updated `order/page.tsx:42` to use `.btn-primary`
+- Updated `order/page.tsx` headings to use `.section-heading`
+- Updated `order/page.tsx` dividers to use `.divider` and `.divider-heading`
+- Updated `page.tsx` headings to use `.section-heading` and `.section-subheading`
+- Updated `page.tsx` dividers to use `.divider` and `.divider-heading`
+- Updated `Navigation.tsx` desktop links (4) to use `.nav-link`
+- Updated `Navigation.tsx` mobile links (4) to use `.nav-link-mobile`
+- Updated `Footer.tsx` dividers (4) to use `.divider-footer` and `.divider-footer-full`
 
 ## Phase 3: Standardize Arbitrary Values
 Focus: Replace arbitrary values with theme tokens for consistency.
