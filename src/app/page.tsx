@@ -28,28 +28,26 @@ export default function Home() {
       <Carousel slides={slides} />
 
       {/* Welcome Section */}
-      <div className="container mx-auto pb-8">
-        <div className="w-3/4 mx-auto pt-8 text-center">
-          <div>
-            <h1 className="text-primary text-4xl md:text-5xl font-bold">About Us.</h1>
-          </div>
-          <hr className="border-t-2 border-[#b4b4b4] w-[95%] mt-1 mb-4" />
-          <div>
-            <p className="text-lg md:text-xl">
-              <span className="text-primary font-quiche-bold">Dolores</span> is a restaurant located in
-              the <span className="text-primary font-quiche-bold">Fox Point neighborhood</span> on the
-              east side of Providence. Dolores features contemporary and regional
-              Mexican cuisine from the
-              <span className="text-primary font-quiche-bold"> Mixteca</span> region of Puebla and Oaxaca,
-              drawing inspiration from its many types of Moles, sauces and stews.
-              The beverage program boasts it&apos;s strength in
-              <span className="text-primary font-quiche-bold"> México&apos;s artisanal agave distillates</span>,
-              offering craft cocktails that are a compliment to the cuisine.
-            </p>
-          </div>
+      <div className="container mx-auto px-6 pb-10">
+        <div className="mx-auto max-w-3xl pt-10 text-center">
+          <h1 className="text-primary text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+            About Us.
+          </h1>
+          <hr className="mx-auto mt-3 mb-6 w-4/5 border-t-2 border-neutral-300/80" />
+          <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+            <span className="text-primary font-quiche-bold">Dolores</span> is a restaurant located in
+            the <span className="text-primary font-quiche-bold">Fox Point neighborhood</span> on the
+            east side of Providence. Dolores features contemporary and regional
+            Mexican cuisine from the
+            <span className="text-primary font-quiche-bold"> Mixteca</span> region of Puebla and Oaxaca,
+            drawing inspiration from its many types of Moles, sauces and stews.
+            The beverage program boasts it&apos;s strength in
+            <span className="text-primary font-quiche-bold"> México&apos;s artisanal agave distillates</span>,
+            offering craft cocktails that are a compliment to the cuisine.
+          </p>
         </div>
       </div>
-      <hr className="my-4 border-gray-300" />
+      <hr className="my-6 border-neutral-200" />
 
       {/* Connect Section */}
       <div className="container mx-auto pb-8">
