@@ -123,7 +123,7 @@ export default function Carousel({
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="relative w-full flex-shrink-0"
+              className="relative w-full shrink-0"
             >
               <Image
                 src={slide.src}

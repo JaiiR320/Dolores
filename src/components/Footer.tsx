@@ -9,7 +9,7 @@ export default function Footer() {
 
           <div className="md:col-span-4">
             <Image
-              className="w-[190px] h-auto mx-auto"
+              className="w-47.5 h-auto mx-auto"
               src="/img/footer-img-small.png"
               alt="footer logo"
               width={190}

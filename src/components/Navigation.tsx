@@ -20,7 +20,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <Image
-              className="h-[85px] w-auto"
+              className="h-21.25 w-auto"
               src="/img/top-left-logo.png"
               alt="Dolores PVD Logo"
               width={85}
