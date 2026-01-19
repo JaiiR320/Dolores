@@ -28,10 +28,10 @@ export default function Footer() {
             <hr className="divider-footer" />
             <div>
               <p>Sunday Brunch 11AM-3PM</p>
-              <p>Monday 4PM-10PM</p>
+              <p>Monday 5PM-10PM</p>
               <p>Tuesday CLOSED</p>
-              <p>Wednesday 4PM-10PM</p>
-              <p>Thursday 4PM-10PM</p>
+              <p>Wednesday 5PM-10PM</p>
+              <p>Thursday 5PM-10PM</p>
               <p>Friday 4PM-10PM, 10PM-11:30PM Late Night Menu</p>
               <p>Saturday 4PM-10PM, 10PM-11:30PM Late Night Menu</p>
             </div>
