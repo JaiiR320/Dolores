@@ -29,8 +29,8 @@
     --text-hero-subtitle-lg: 200%;
 
     /* Spacing - Hero/Carousel vertical positioning */
-    --spacing-hero-top-sm: 40%;
-    --spacing-hero-top-md: 45%;
+    --spacing-hero-top-sm: 50%;
+    --spacing-hero-top-md: 50%;
 }
 
 @layer base {
@@ -71,7 +71,7 @@
 
     /* Hero/Carousel title */
     .hero-title {
-        @apply font-bold mb-4 uppercase text-hero-title-sm sm:text-hero-title-md md:text-hero-title-lg;
+        @apply font-bold mb-1 uppercase leading-none text-hero-title-sm sm:text-hero-title-md md:text-hero-title-lg;
         text-shadow: var(--shadow-text-lg);
     }
 

@@ -99,7 +99,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/"
-                  className="nav-link-mobile"
+                  className={`nav-link-mobile ${isActive("/") && pathname === "/" ? "font-quiche-bold" : ""}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Home
@@ -108,7 +108,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/menu"
-                  className="nav-link-mobile"
+                  className={`nav-link-mobile ${isActive("/menu") ? "font-quiche-bold" : ""}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Menu
@@ -117,7 +117,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/reservation"
-                  className="nav-link-mobile"
+                  className={`nav-link-mobile ${isActive("/reservation") ? "font-quiche-bold" : ""}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Reserve
@@ -126,7 +126,7 @@ export default function Navigation() {
               <li>
                 <Link
                   href="/order"
-                  className="nav-link-mobile"
+                  className={`nav-link-mobile ${isActive("/order") ? "font-quiche-bold" : ""}`}
                   onClick={() => setIsOpen(false)}
                 >
                   Order
