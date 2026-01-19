@@ -1,6 +1,7 @@
 "use client";
 
 import HeroSection from "@/components/HeroSection";
+import { trackOrderClick, trackGiftCardClick } from "@/lib/analytics";
 
 export default function OrderPage() {
   return (
@@ -11,6 +12,7 @@ export default function OrderPage() {
         imageAlt="Mixers"
         buttonText="Order Here"
         buttonLink="https://app.upserve.com/s/dolores-providence"
+        onButtonClick={() => trackOrderClick("order_page")}
       />
 
       {/* Welcome Section */}
@@ -40,12 +42,13 @@ export default function OrderPage() {
             <button
               type="button"
               className="btn-primary"
-              onClick={() =>
+              onClick={() => {
+                trackGiftCardClick();
                 window.open(
                   "https://app.upserve.com/b/dolores/gift-card",
                   "_self",
-                )
-              }
+                );
+              }}
             >
               Get Here
             </button>

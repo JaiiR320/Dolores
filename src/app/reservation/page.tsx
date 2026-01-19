@@ -1,4 +1,7 @@
+"use client";
+
 import HeroSection from "@/components/HeroSection";
+import { trackReservationClick } from "@/lib/analytics";
 
 export default function ReservationPage() {
   return (
@@ -7,6 +10,7 @@ export default function ReservationPage() {
       imageAlt="Dining Room Horizontal"
       buttonText="Reserve Here"
       buttonLink="https://www.exploretock.com/dolores/"
+      onButtonClick={trackReservationClick}
     />
   );
 }

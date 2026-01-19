@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { trackOrderClick } from "@/lib/analytics";
 
 interface CarouselSlide {
   src: string;
@@ -150,9 +151,10 @@ export default function Carousel({
                     <button
                       type="button"
                       className="btn-primary"
-                      onClick={() =>
-                        window.open(slide.caption!.buttonLink, "_self")
-                      }
+                      onClick={() => {
+                        trackOrderClick("home");
+                        window.open(slide.caption!.buttonLink, "_self");
+                      }}
                     >
                       {slide.caption.buttonText}
                     </button>

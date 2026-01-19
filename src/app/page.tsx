@@ -1,5 +1,8 @@
+"use client";
+
 import Carousel from "@/components/Carousel";
 import { FacebookIcon, InstagramIcon } from "@/components/icons";
+import { trackSocialClick } from "@/lib/analytics";
 
 export default function Home() {
   const slides = [
@@ -60,6 +63,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit our Facebook page"
+              onClick={() => trackSocialClick("facebook")}
             >
               <FacebookIcon className="social-icon text-social-facebook hover:text-footer-text" />
             </a>
@@ -68,6 +72,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit our Instagram page"
+              onClick={() => trackSocialClick("instagram")}
             >
               <InstagramIcon className="social-icon text-social-instagram hover:text-footer-text" />
             </a>
