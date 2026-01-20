@@ -7,7 +7,6 @@ This document provides essential information for AI coding agents working in thi
 - **Project**: Dolores PVD - Restaurant website for a contemporary Mexican restaurant
 - **Stack**: Next.js 16.1.1, React 19.2.3, TypeScript 5.x, Tailwind CSS 4.x
 - **Package Manager**: pnpm
-- **Output**: Static export (deployed to static hosting)
 
 ## Build/Lint/Test Commands
 
