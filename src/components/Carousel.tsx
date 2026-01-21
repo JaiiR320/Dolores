@@ -29,7 +29,6 @@ export default function Carousel({
   interval = 5000,
 }: CarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
@@ -37,14 +36,15 @@ export default function Carousel({
   const minSwipeDistance = 50;
 
   useEffect(() => {
-    if (!autoSlide || isPaused) return;
+    if (!autoSlide) return;
 
+    const delay = currentSlide === 0 ? 8000 : interval;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, interval);
+    }, delay);
 
     return () => clearInterval(timer);
-  }, [autoSlide, interval, slides.length, currentSlide, isPaused]);
+  }, [autoSlide, interval, slides.length, currentSlide]);
 
   const goToSlide = useCallback((index: number) => {
     setCurrentSlide(index);
@@ -82,15 +82,9 @@ export default function Carousel({
     }
   };
 
-  // Hover handlers for pause functionality
-  const onMouseEnter = () => setIsPaused(true);
-  const onMouseLeave = () => setIsPaused(false);
-
   return (
     <div
       className="relative"
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
     >
       {/* Indicators */}
       {showIndicators && slides.length > 1 && (
