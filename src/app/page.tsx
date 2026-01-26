@@ -1,6 +1,7 @@
 "use client";
 
 import Carousel from "@/components/Carousel";
+import ClosureBanner from "@/components/ClosureBanner";
 import { FacebookIcon, InstagramIcon } from "@/components/icons";
 import { trackSocialClick } from "@/lib/analytics";
 
@@ -28,6 +29,9 @@ export default function Home() {
 
   return (
     <>
+      {/* Closure Banner */}
+      <ClosureBanner />
+
       {/* Image Slider */}
       <Carousel slides={slides} />
 
