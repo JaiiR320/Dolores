@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  allowedDevOrigins: [
+    "192.168.1.181",
+    "localhost",
+  ],
 };
 
 export default nextConfig;

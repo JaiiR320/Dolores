@@ -55,6 +55,11 @@
         text-shadow: var(--shadow-text-btn);
     }
 
+    .btn-secondary {
+        @apply bg-white border border-primary transition hover:bg-primary-dark hover:border-primary-dark text-primary hover:text-white px-8 py-3 rounded text-lg font-semibold;
+        text-shadow: none;
+    }
+
     /* Navigation links */
     .nav-link {
         @apply text-primary hover:text-primary-light text-nav transition-colors;

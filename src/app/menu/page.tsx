@@ -3,6 +3,18 @@ import MenuSection from "@/components/MenuSection";
 export default function MenuPage() {
   return (
     <>
+      <div id="restaurant-week">
+        <MenuSection
+          title="Providence Restaurant Week"
+          images={[
+            {
+              src: "/menu/restaurant-week.jpeg",
+              alt: "Providence Restaurant Week tasting menu",
+            },
+          ]}
+        />
+      </div>
+
       <MenuSection
         title="Dinner"
         images={[{ src: "/menu/food.jpeg", alt: "dinner menu" }]}
