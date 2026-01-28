@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import Carousel from "@/components/Carousel";
 import { FacebookIcon, InstagramIcon } from "@/components/icons";
 import { trackSocialClick } from "@/lib/analytics";
@@ -30,6 +32,31 @@ export default function Home() {
     <>
       {/* Image Slider */}
       <Carousel slides={slides} />
+
+      {/* Restaurant Week */}
+      <div className="w-full bg-gray-50">
+        <div className="container mx-auto px-6 py-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="section-heading">Providence Restaurant Week</h2>
+            <hr className="divider-heading" />
+            <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+              3 courses $40 (excludes tax and gratuity)
+            </p>
+            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link href="/menu#restaurant-week" className="btn-primary">
+                View Tasting Menu
+              </Link>
+              <a
+                href="https://www.exploretock.com/dolores/"
+                className="btn-primary bg-white text-primary border-primary hover:bg-primary-dark hover:text-white"
+              >
+                Reserve
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr className="divider" />
 
       {/* Welcome Section */}
       <div className="container mx-auto px-6 pb-10">
