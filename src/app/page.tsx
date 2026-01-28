@@ -40,6 +40,8 @@ export default function Home() {
             <h2 className="section-heading">Providence Restaurant Week</h2>
             <hr className="divider-heading" />
             <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+              Join us for Providence Restaurant Week, running January 25 - February 7, 2026.
+              <br />
               3 courses $40 (excludes tax and gratuity)
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
