@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { quicheRegular, quicheBold } from "@/lib/fonts";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ClosureBanner from "@/components/ClosureBanner";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${quicheRegular.variable} ${quicheBold.variable}`}>
+        <ClosureBanner />
         <Navigation />
         {children}
         <Footer />
