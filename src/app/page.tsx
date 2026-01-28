@@ -48,7 +48,7 @@ export default function Home() {
               </Link>
               <a
                 href="https://www.exploretock.com/dolores/"
-                className="btn-primary bg-white text-primary border-primary hover:bg-primary-dark hover:text-white"
+                className="btn-secondary"
               >
                 Reserve
               </a>
