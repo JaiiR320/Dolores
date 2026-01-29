@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${quicheRegular.variable} ${quicheBold.variable}`}>
-        <ClosureBanner />
+        {/* <ClosureBanner /> */}
         <Navigation />
         {children}
         <Footer />
