@@ -14,8 +14,11 @@ export default function Navigation() {
     return pathname.startsWith(path);
   };
 
+  // Check if we're on a test page to add top spacing for the switcher
+  const isTestPage = pathname === "/" || pathname.startsWith("/test-home");
+
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className={`bg-white shadow-sm sticky z-50 ${isTestPage ? "top-10" : "top-0"}`}>
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
