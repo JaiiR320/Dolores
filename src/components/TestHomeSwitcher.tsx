@@ -10,6 +10,11 @@ const testPages = [
   { href: "/test-home-3", label: "Option 3" },
   { href: "/test-home-4", label: "Option 4" },
   { href: "/test-home-5", label: "Option 5" },
+  { href: "/test-home-6", label: "Option 6" },
+  { href: "/test-home-7", label: "Option 7" },
+  { href: "/test-home-8", label: "Option 8" },
+  { href: "/test-home-9", label: "Option 9" },
+  { href: "/test-home-10", label: "Option 10" },
 ];
 
 export default function TestHomeSwitcher() {
