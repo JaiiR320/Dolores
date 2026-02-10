@@ -7,8 +7,9 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true,
   allowedDevOrigins: [
-    "192.168.1.181",
-    "localhost",
+    "http://192.168.1.181:3000",
+    "http://localhost:3000",
+    "https://jair.crane-tawny.ts.net",
   ],
 };
 
