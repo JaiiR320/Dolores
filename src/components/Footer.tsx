@@ -31,9 +31,9 @@ export default function Footer() {
               <p>Monday 5PM-10PM</p>
               <p>Tuesday CLOSED</p>
               <p>Wednesday 5PM-10PM</p>
-              <p>Thursday 5PM-10PM</p>
-              <p>Friday 4PM-10PM, 10PM-11:30PM Late Night Menu</p>
-              <p>Saturday 4PM-10PM, 10PM-11:30PM Late Night Menu</p>
+              <p>Thursday Lunch 12PM-3PM, 5PM-10PM</p>
+              <p>Friday Lunch 12PM-3PM, 4PM-10PM, 10PM-11:30PM Late Night Menu</p>
+              <p>Saturday Lunch 12PM-3PM, 4PM-10PM, 10PM-11:30PM Late Night Menu</p>
             </div>
           </div>
 
